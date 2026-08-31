@@ -108,7 +108,7 @@
             <div class="toolbar-actions"><button id="clearDraftBtn" class="ghost danger-soft" type="button">Vaciar borrador</button><button id="exportSapBtn" class="primary" type="button">Exportar Excel SAP</button></div>
           </section>
           <div id="draftSuppliers" class="supplier-groups"></div>
-          <section class="panel template-note"><strong>Plantillas de proveedor</strong><p>Las añadiremos aquí cuando me pases los archivos que exige cada proveedor. La aplicación utilizará el “Código proveedor” del catálogo de interlocutor comercial.</p></section>
+          <section class="panel template-note"><strong>Plantillas de proveedor</strong><p><strong>MSD integrado:</strong> Animales de compañía, Porcino y Rumiantes. La app separa automáticamente las referencias por propiedades SAP y utiliza el código de catálogo del proveedor para rellenar la plantilla correspondiente.</p></section>
         </div>
       </section>
 
@@ -125,6 +125,8 @@
   <dialog id="detailDialog" class="detail-dialog"><form method="dialog" class="detail-shell"><header class="detail-header"><div><p class="eyebrow dark">DETALLE DEL ARTÍCULO</p><h2 id="detailTitle"></h2><p id="detailSubtitle"></p></div><button class="icon-btn" value="close" aria-label="Cerrar">×</button></header><div id="detailContent"></div></form></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="msd-templates.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

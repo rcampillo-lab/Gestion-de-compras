@@ -74,3 +74,14 @@ No requiere build: `index.html`, `styles.css`, `app.js`.
 - Proveedor más estrecho con puntos suspensivos.
 - Respaldo de proveedor desde pedidos abiertos cuando el proveedor del STOCK viene vacío.
 - El query v1.4.5 mantiene el proveedor preferente de OITM cuando existe y, si está vacío, usa como respaldo el proveedor del último pedido de compra no cancelado. Esto permite recuperar proveedores como Lenda cuando la ficha de artículo no tiene CardCode informado.
+
+
+## v1.7 · Plantillas MSD
+- Integradas las tres plantillas 2026 de MSD: Animales de compañía, Porcino y Rumiantes.
+- Clasificación automática por propiedades SAP: Propiedad 1 -> compañía, Propiedad 3 -> porcino, Propiedad 4 -> rumiantes.
+- Las posiciones ambiguas se marcan como Revisar clasificación.
+- El código de catálogo del proveedor se usa para localizar la línea de la plantilla.
+- Se limpian las cantidades de ejemplo de la plantilla antes de generar cada pedido.
+- Porcino calcula la columna DOSIS cuando la unidad de venta contiene dosis.
+- Rumiantes conserva las fórmulas de importe y actualiza sus valores.
+- Las plantillas originales están embebidas en la app y no se guardan datos de sesión.

@@ -172,3 +172,7 @@
 #planTable th:nth-child(12),#planTable td:nth-child(12){width:5.5%}
 #planTable th:nth-child(13),#planTable td:nth-child(13){width:10%}
 #planTable th:nth-child(14),#planTable td:nth-child(14){width:10%}
+
+
+/* v1.7 · plantillas MSD por división */
+.msd-template-panel{padding:14px 16px;border-bottom:1px solid var(--line);background:#fbfdff}.msd-template-panel-title{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:10px}.msd-template-panel-title span{color:var(--muted);font-size:12px;font-weight:700}.msd-template-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.msd-template-card{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:13px;background:white}.msd-template-card.ready{border-color:#b7dfca;background:#f5fcf8}.msd-template-card.warning{border-color:#f2cf91;background:#fffaf0}.msd-template-card>div{min-width:0}.msd-template-kicker{display:block;color:var(--blue-dark);font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.msd-template-card strong{display:block;margin-top:3px;font-size:13px}.msd-template-card small{display:block;margin-top:2px;color:var(--muted);font-size:11px}.msd-template-card button{flex:0 0 auto;padding:9px 11px;font-size:12px}.msd-template-card button:disabled{opacity:.5;cursor:not-allowed}@media(max-width:1050px){.msd-template-grid{grid-template-columns:1fr}.msd-template-panel-title{display:block}.msd-template-panel-title span{display:block;margin-top:3px}}
