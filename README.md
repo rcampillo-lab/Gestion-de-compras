@@ -38,3 +38,8 @@ No requiere build: `index.html`, `styles.css`, `app.js`.
 - Se elimina Código proveedor de la tabla principal; sigue disponible en el detalle y borrador.
 - La app ignora artículos inactivos si el fichero contiene `Inactivo`/`frozenFor` o `Activo`/`validFor`.
 - Recomendación de query: excluirlos directamente con `AND COALESCE(I."frozenFor", 'N') = 'N'` en ambos SELECT.
+
+
+## v1.2
+- Proveedor con ancho fijo y puntos suspensivos en tablas para mantener una vista compacta.
+- Nombre completo visible al pasar el ratón sobre el proveedor.
