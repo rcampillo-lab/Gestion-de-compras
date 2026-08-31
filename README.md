@@ -85,3 +85,12 @@ No requiere build: `index.html`, `styles.css`, `app.js`.
 - Porcino calcula la columna DOSIS cuando la unidad de venta contiene dosis.
 - Rumiantes conserva las fórmulas de importe y actualiza sus valores.
 - Las plantillas originales están embebidas en la app y no se guardan datos de sesión.
+
+
+## v1.8
+- Mínimo y Comprometido clicables para copiar la cifra a **A pedir**.
+- Filtro **Solo con comprometido**.
+- Proveedor clicable para activar automáticamente el filtro de ese proveedor.
+- Nueva lógica de stock útil: un lote deja de computar para compra cuando su caducidad queda dentro de la mitad de la política de devolución.
+- El detalle separa stock físico, stock que no computa por caducidad y stock útil para compra.
+- La regla se aplica por lote; los lotes con vida suficiente siguen computando.
