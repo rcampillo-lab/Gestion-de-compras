@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Asistente de compras PROVESA basado en datos cargados desde SAP Business One." />
+  <title>Asistente de compras · PROVESA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">PROVESA · OPERACIONES</p>
+        <h1>Asistente de compras</h1>
+        <p class="hero-copy">Carga el Excel del query de SAP, revisa necesidades, caducidades y pedidos de proveedor. Los datos solo viven durante esta sesión.</p>
+      </div>
+      <div class="hero-actions">
+        <label class="upload-btn" for="fileInput">Cargar datos SAP<input id="fileInput" type="file" accept=".xlsx,.xls,.csv" /></label>
+        <button class="secondary" id="clearSessionBtn" type="button" disabled>Limpiar sesión</button>
+      </div>
+    </header>
+
+    <section class="session-notice" aria-live="polite">
+      <strong>Sesión temporal.</strong>
+      <span>No se usa localStorage ni ninguna base de datos. Al recargar o cerrar la página se eliminan los datos cargados y el borrador.</span>
+    </section>
+
+    <nav class="tabs" aria-label="Secciones de la aplicación">
+      <button class="tab active" type="button" data-tab="plan">Planificar</button>
+      <button class="tab" type="button" data-tab="orders">Pedidos proveedor <span id="ordersTabBadge" class="tab-badge">0</span></button>
+      <button class="tab" type="button" data-tab="draft">Borrador <span id="draftTabBadge" class="tab-badge">0</span></button>
+      <button class="tab" type="button" data-tab="config">Configuración</button>
+    </nav>
+
+    <main>
+      <section id="planPanel" class="tab-panel active">
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">⇧</div>
+          <h2>Carga el resultado del query de SAP</h2>
+          <p>La aplicación empezará vacía cada vez. Admite Excel o CSV con las columnas del query maestro que hemos preparado.</p>
+          <label class="upload-btn upload-btn-primary" for="fileInputEmpty">Seleccionar archivo<input id="fileInputEmpty" type="file" accept=".xlsx,.xls,.csv" /></label>
+        </div>
+
+        <div id="workspace" class="hidden">
+          <section class="cards" aria-label="Resumen de compras">
+            <article class="card"><span>Necesitan pedido</span><strong id="kpiNeed">0</strong><small id="kpiNeedUnits">0 uds. sugeridas</small></article>
+            <article class="card"><span>Riesgo de rotura</span><strong id="kpiBreak">0</strong><small>Sin cobertura suficiente</small></article>
+            <article class="card"><span>Revisar caducidad</span><strong id="kpiExpiry">0</strong><small>Según política configurada</small></article>
+            <article class="card"><span>Pedidos abiertos</span><strong id="kpiOpenOrders">0</strong><small id="kpiLateOrders">0 líneas retrasadas</small></article>
+            <article class="card"><span>Borrador actual</span><strong id="kpiDraftLines">0</strong><small id="kpiDraftUnits">0 uds.</small></article>
+          </section>
+
+          <section class="filters-panel">
+            <div class="toolbar">
+              <div class="search-box"><input id="searchInput" type="search" placeholder="Buscar artículo, descripción, comentario, proveedor o código proveedor…" /></div>
+              <div class="toolbar-actions">
+                <button id="acceptSuggestionsBtn" class="ghost" type="button">Aceptar sugerencias visibles</button>
+                <button id="goDraftBtn" class="primary" type="button">Preparar pedido (<span id="prepareCount">0</span>)</button>
+              </div>
+            </div>
+            <div class="filter-grid">
+              <label>Proveedor<select id="supplierFilter"><option value="">Todos los proveedores</option></select></label>
+              <label>Almacén<select id="warehouseFilter"><option value="">Almacenes 01 + 02</option><option value="01">Almacén 01</option><option value="02">Almacén 02</option></select></label>
+              <label>Estado<select id="statusFilter"><option value="">Todos los estados</option><option value="Rotura">Rotura</option><option value="Pedir">Pedir</option><option value="Revisar caducidad">Revisar caducidad</option><option value="Exceso">Exceso</option><option value="OK">OK</option></select></label>
+              <label>Atención<select id="attentionFilter"><option value="">Todos</option><option value="attention">Solo requieren atención</option><option value="order">Solo con pedido sugerido</option><option value="expiry">Solo caducidad</option></select></label>
+            </div>
+            <div class="results-line"><span id="loadInfo"></span><strong id="resultCount">0 posiciones</strong></div>
+          </section>
+
+          <div class="table-wrap"><table id="planTable"><thead><tr>
+            <th data-sort="status">Estado</th><th data-sort="itemCode">Nº artículo</th><th data-sort="supplierCatalog">Código proveedor</th><th data-sort="description">Descripción</th><th data-sort="comment">Comentario</th><th data-sort="supplier">Proveedor</th><th data-sort="warehouse">Alm.</th><th class="num" data-sort="stock">Stock</th><th class="num" data-sort="committed">Comp.</th><th class="num" data-sort="pending">Pendiente</th><th class="num" data-sort="rot60">Rot. 60</th><th class="num" data-sort="daysStock">Días stock</th><th class="num" data-sort="minimum">Mínimo</th><th data-sort="nextExpiry">Próx. caducidad</th><th class="num" data-sort="suggested">Sugerido</th><th class="num" data-sort="toOrder">A pedir</th><th>Detalle</th>
+          </tr></thead><tbody id="planTableBody"></tbody></table></div>
+        </div>
+      </section>
+
+      <section id="ordersPanel" class="tab-panel">
+        <div id="ordersEmpty" class="empty-state compact"><h2>Pedidos de proveedor</h2><p>Cuando cargues el query aparecerán aquí todas las líneas de compra que siguen abiertas.</p></div>
+        <div id="ordersWorkspace" class="hidden">
+          <section class="cards cards-orders">
+            <article class="card"><span>Líneas abiertas</span><strong id="ordersOpenLines">0</strong><small>Del archivo cargado</small></article>
+            <article class="card"><span>Retrasadas</span><strong id="ordersLate">0</strong><small>Fecha prevista vencida</small></article>
+            <article class="card"><span>Recepción parcial</span><strong id="ordersPartial">0</strong><small>Queda cantidad pendiente</small></article>
+            <article class="card"><span>Sin fecha</span><strong id="ordersNoDate">0</strong><small>Necesitan revisión</small></article>
+          </section>
+          <section class="filters-panel">
+            <div class="toolbar"><input id="orderSearchInput" type="search" placeholder="Buscar pedido, artículo, proveedor o referencia…" /></div>
+            <div class="filter-grid">
+              <label>Proveedor<select id="orderSupplierFilter"><option value="">Todos los proveedores</option></select></label>
+              <label>Almacén<select id="orderWarehouseFilter"><option value="">Almacenes 01 + 02</option><option value="01">Almacén 01</option><option value="02">Almacén 02</option></select></label>
+              <label>Estado<select id="orderStatusFilter"><option value="">Todos los estados</option><option value="RETRASADO">Retrasado</option><option value="RETRASADO - PARCIAL">Retrasado - parcial</option><option value="PARCIAL">Parcial</option><option value="PENDIENTE">Pendiente</option><option value="VENCE HOY">Vence hoy</option><option value="SIN FECHA">Sin fecha</option></select></label>
+            </div>
+            <div class="results-line"><span>Seguimiento desde OPOR/POR1</span><strong id="orderResultCount">0 líneas</strong></div>
+          </section>
+          <div class="table-wrap"><table id="ordersTable"><thead><tr>
+            <th data-order-sort="orderNumber">Pedido</th><th data-order-sort="supplier">Proveedor</th><th data-order-sort="itemCode">Artículo</th><th data-order-sort="supplierCatalog">Código proveedor</th><th data-order-sort="description">Descripción</th><th data-order-sort="warehouse">Alm.</th><th data-order-sort="orderDate">Fecha pedido</th><th data-order-sort="expectedDate">Fecha prevista</th><th class="num" data-order-sort="orderedQty">Pedido</th><th class="num" data-order-sort="receivedQty">Recibido</th><th class="num" data-order-sort="pendingQty">Pendiente</th><th class="num" data-order-sort="delayDays">Retraso</th><th data-order-sort="status">Estado</th>
+          </tr></thead><tbody id="ordersTableBody"></tbody></table></div>
+        </div>
+      </section>
+
+      <section id="draftPanel" class="tab-panel">
+        <div id="draftEmpty" class="empty-state compact"><h2>Borrador de compra vacío</h2><p>Indica cantidades en “A pedir” o acepta las sugerencias visibles. El borrador se perderá al cerrar o recargar la página.</p></div>
+        <div id="draftWorkspace" class="hidden">
+          <section class="draft-header panel">
+            <div><p class="eyebrow dark">BORRADOR DE ESTA SESIÓN</p><h2>Pedido a preparar</h2><p id="draftSummary"></p></div>
+            <div class="toolbar-actions"><button id="clearDraftBtn" class="ghost danger-soft" type="button">Vaciar borrador</button><button id="exportSapBtn" class="primary" type="button">Exportar Excel SAP</button></div>
+          </section>
+          <div id="draftSuppliers" class="supplier-groups"></div>
+          <section class="panel template-note"><strong>Plantillas de proveedor</strong><p>Las añadiremos aquí cuando me pases los archivos que exige cada proveedor. La aplicación utilizará el “Código proveedor” del catálogo de interlocutor comercial.</p></section>
+        </div>
+      </section>
+
+      <section id="configPanel" class="tab-panel">
+        <div class="config-grid">
+          <section class="panel"><p class="eyebrow dark">MOTOR DE COMPRA</p><h2>Parámetros de esta versión</h2><div class="config-form"><label>Días objetivo de cobertura<input id="targetDaysInput" type="number" min="1" step="1" value="60" /></label><label>Umbral de exceso (días)<input id="excessDaysInput" type="number" min="1" step="1" value="120" /></label></div><p class="help">Estos parámetros solo viven en memoria durante la sesión. El cálculo base usa rotación de 60 días, stock disponible, pedidos pendientes, mínimo y unidades por caja.</p></section>
+          <section class="panel"><p class="eyebrow dark">POLÍTICAS DE DEVOLUCIÓN</p><h2>Reglas incluidas en código</h2><div class="policy-list"><div><strong>General</strong><span>12 meses</span></div><div><strong>FATRO</strong><span>Sin política</span></div><div><strong>VETNOVA</strong><span>Sin política</span></div><div><strong>MSD · frío</strong><span>6 meses</span></div><div><strong>MSD · no frío</strong><span>9 meses</span></div></div></section>
+          <section class="panel"><p class="eyebrow dark">DATOS</p><h2>Sin persistencia</h2><ul class="plain-list"><li>No se guarda el Excel.</li><li>No se guarda el borrador.</li><li>No se usa localStorage.</li><li>No hay base de datos ni backend.</li><li>Recargar la página reinicia todo.</li></ul></section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="detailDialog" class="detail-dialog"><form method="dialog" class="detail-shell"><header class="detail-header"><div><p class="eyebrow dark">DETALLE DEL ARTÍCULO</p><h2 id="detailTitle"></h2><p id="detailSubtitle"></p></div><button class="icon-btn" value="close" aria-label="Cerrar">×</button></header><div id="detailContent"></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

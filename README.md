@@ -1,0 +1,33 @@
+# Asistente de compras · PROVESA
+
+Aplicación web estática para trabajar con el resultado del query maestro de SAP Business One HANA.
+
+## Sin persistencia
+- No usa localStorage.
+- No usa base de datos.
+- No envía el Excel a ningún backend.
+- Los datos, filtros y borrador viven solo en la memoria de la pestaña.
+- Al recargar o cerrar la página se pierde la sesión.
+
+## Flujo
+1. Ejecutar el query maestro en SAP B1 y exportar a Excel/CSV.
+2. Cargar el archivo en la app.
+3. La app separa STOCK y PEDIDO por `Tipo registro`.
+4. La pantalla principal se agrupa por `Nº artículo + Almacén`; los datos de stock repetidos por lote no se suman.
+5. Los lotes quedan en el detalle del artículo.
+6. Las líneas PEDIDO se muestran en el seguimiento de pedidos de proveedor.
+7. `A pedir` genera un borrador temporal.
+8. `Exportar Excel SAP` crea `Nº artículo | Cantidad`.
+
+## Motor de compra v1
+Demanda diaria = Rot. 60 / 60. Objetivo = máximo entre mínimo de inventario y demanda para los días objetivo. Disponible = máximo de Stock - Comprometido y 0. Proyectado = Disponible + Pendiente compra. Necesidad = Objetivo - Proyectado. El resultado se redondea hacia arriba por `Uds caja`.
+
+Las caducidades generan avisos, pero todavía no descuentan stock automáticamente del cálculo de compra; afinaremos esa lógica FEFO después.
+
+## Políticas en código
+- General: 12 meses.
+- FATRO: sin política.
+- VETNOVA: sin política.
+- MSD: 6 meses para frío y 9 meses para no frío.
+
+No requiere build: `index.html`, `styles.css`, `app.js`.
