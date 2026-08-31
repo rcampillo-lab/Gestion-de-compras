@@ -57,3 +57,11 @@ No requiere build: `index.html`, `styles.css`, `app.js`.
 - Filtro Área: Todos / Animales de compañía (Propiedad 1) / Producción (Propiedad 2).
 - Filtro de producción: Porcino (Propiedad 3) / Rumiantes (Propiedad 4); se oculta al seleccionar Animales de compañía.
 - El query debe incluir QryGroup1..QryGroup4 con los alias usados por la app.
+
+
+## v1.5
+- Copo de nieve movido del número de artículo a la descripción.
+- Orden de tabla principal: Ver, Estado, Nº artículo, Descripción, Stock, Comp., Pend., Rot.60, Días, Mín., Cad., Sug., A pedir, Nota, Proveedor.
+- Detalle del artículo como panel lateral derecho de media pantalla, con datos en filas.
+- Clic en la cantidad sugerida copia automáticamente la sugerencia al campo A pedir.
+- Nº de artículo y descripción también abren el detalle.

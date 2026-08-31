@@ -52,3 +52,99 @@
 .cold-icon{display:inline-block;flex:0 0 auto;font-size:12px;line-height:1;color:#1976d2;filter:drop-shadow(0 0 1px rgba(25,118,210,.18))}
 @media(max-width:1250px){.filter-grid{grid-template-columns:repeat(3,minmax(140px,1fr))}.cold-icon{font-size:11px}}
 @media(max-width:820px){.filter-grid{grid-template-columns:1fr}}
+
+/* v1.5 · orden compacto, copo en descripción, sugerido clicable y detalle lateral */
+#planTable .item-detail-link,
+#planTable .desc-detail-link{
+  display:block;
+  width:100%;
+  min-width:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:inherit;
+  text-align:left;
+  font:inherit;
+}
+#planTable .item-detail-link{font-weight:900;color:var(--blue-dark)}
+#planTable .desc-detail-link{font-weight:700}
+#planTable .item-detail-link:hover,
+#planTable .desc-detail-link:hover{color:var(--blue);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+#planTable .desc-detail-link .cell-ellipsis{display:flex;align-items:center;gap:4px;min-width:0}
+#planTable .cold-icon{font-size:12px;flex:0 0 auto}
+#planTable .suggestion-link,
+.detail-suggestion-link{
+  border:0;
+  background:transparent;
+  color:var(--blue-dark);
+  font-weight:950;
+  padding:2px 3px;
+  border-radius:6px;
+  text-decoration:underline;
+  text-decoration-style:dotted;
+  text-underline-offset:3px;
+}
+#planTable .suggestion-link:not(:disabled):hover,
+.detail-suggestion-link:not(:disabled):hover{background:var(--soft-blue);color:var(--blue)}
+#planTable .suggestion-link:disabled,
+.detail-suggestion-link:disabled{opacity:.5;text-decoration:none;cursor:default}
+#planTable .view-cell{text-align:center}
+
+/* Orden: Ver, Estado, Nº artículo, Descripción, Stock, Comp., Pend., Rot.60, Días, Mín., Cad., Sug., A pedir, Nota, Proveedor */
+#planTable th:nth-child(1),#planTable td:nth-child(1){width:2.5%}
+#planTable th:nth-child(2),#planTable td:nth-child(2){width:6.5%}
+#planTable th:nth-child(3),#planTable td:nth-child(3){width:5.5%}
+#planTable th:nth-child(4),#planTable td:nth-child(4){width:21%}
+#planTable th:nth-child(5),#planTable td:nth-child(5){width:4%}
+#planTable th:nth-child(6),#planTable td:nth-child(6){width:4%}
+#planTable th:nth-child(7),#planTable td:nth-child(7){width:4.5%}
+#planTable th:nth-child(8),#planTable td:nth-child(8){width:4.5%}
+#planTable th:nth-child(9),#planTable td:nth-child(9){width:4%}
+#planTable th:nth-child(10),#planTable td:nth-child(10){width:4%}
+#planTable th:nth-child(11),#planTable td:nth-child(11){width:6.5%}
+#planTable th:nth-child(12),#planTable td:nth-child(12){width:4.5%}
+#planTable th:nth-child(13),#planTable td:nth-child(13){width:5.5%}
+#planTable th:nth-child(14),#planTable td:nth-child(14){width:9%}
+#planTable th:nth-child(15),#planTable td:nth-child(15){width:14%}
+
+/* Panel lateral derecho de detalle */
+.detail-dialog{
+  position:fixed;
+  inset:0 0 0 auto;
+  width:50vw;
+  max-width:780px;
+  min-width:560px;
+  height:100vh;
+  max-height:100vh;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:22px 0 0 22px;
+  overflow:auto;
+  box-shadow:-24px 0 70px rgba(16,32,51,.22);
+}
+.detail-dialog::backdrop{background:rgba(9,23,38,.18);backdrop-filter:none}
+.detail-shell{min-height:100%;background:white}
+.detail-header{padding:16px 18px}
+.detail-header h2{font-size:19px;line-height:1.25}
+#detailContent{padding:14px 18px 24px}
+.detail-section-first{margin-top:0}
+.detail-section{margin-top:16px}
+.detail-section h3{font-size:14px;margin:0 0 7px}
+.detail-rows{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:white}
+.detail-row{display:grid;grid-template-columns:minmax(145px,40%) 1fr;gap:12px;align-items:center;padding:8px 11px;border-bottom:1px solid var(--line)}
+.detail-row:last-child{border-bottom:0}
+.detail-row span{color:var(--muted);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.03em}
+.detail-row strong{font-size:12.5px;text-align:right;word-break:break-word}
+.detail-mini-table{max-width:100%;overflow:auto}
+.detail-mini-table table{min-width:620px}
+.detail-mini-table th,.detail-mini-table td{padding:7px 6px;font-size:10.5px}
+.detail-mini-table .cell-ellipsis{display:block;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+@media(max-width:1100px){
+  .detail-dialog{width:58vw;min-width:520px}
+}
+@media(max-width:820px){
+  .detail-dialog{width:94vw;max-width:94vw;min-width:0;border-radius:18px 0 0 18px}
+  .detail-row{grid-template-columns:42% 1fr}
+}
