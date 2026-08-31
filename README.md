@@ -43,3 +43,10 @@ No requiere build: `index.html`, `styles.css`, `app.js`.
 ## v1.2
 - Proveedor con ancho fijo y puntos suspensivos en tablas para mantener una vista compacta.
 - Nombre completo visible al pasar el ratón sobre el proveedor.
+
+
+## v1.3
+- La tabla principal usa todo el ancho disponible y no requiere desplazamiento horizontal.
+- Descripción, comentario y proveedor se recortan con puntos suspensivos y muestran el texto completo al pasar el ratón.
+- Cabeceras compactadas y botón de detalle reducido para mantener visibles todas las columnas.
+- Los estados incluyen explicación en tooltip.
