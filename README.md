@@ -50,3 +50,10 @@ No requiere build: `index.html`, `styles.css`, `app.js`.
 - Descripción, comentario y proveedor se recortan con puntos suspensivos y muestran el texto completo al pasar el ratón.
 - Cabeceras compactadas y botón de detalle reducido para mantener visibles todas las columnas.
 - Los estados incluyen explicación en tooltip.
+
+
+## v1.4
+- Copo de nieve junto al código para artículos con Frío = Y.
+- Filtro Área: Todos / Animales de compañía (Propiedad 1) / Producción (Propiedad 2).
+- Filtro de producción: Porcino (Propiedad 3) / Rumiantes (Propiedad 4); se oculta al seleccionar Animales de compañía.
+- El query debe incluir QryGroup1..QryGroup4 con los alias usados por la app.

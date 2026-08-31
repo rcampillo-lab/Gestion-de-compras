@@ -43,3 +43,12 @@
   #planTable .badge{font-size:8.8px;padding:3px 4px}
   #planTable .order-input{font-size:10px;padding:4px 2px}
 }
+
+
+/* v1.4 · propiedades de artículo y artículos de frío */
+.filter-grid{grid-template-columns:repeat(6,minmax(120px,1fr))}
+.hidden-filter{display:none!important}
+.item-code-wrap{display:flex;align-items:center;gap:3px;min-width:0}
+.cold-icon{display:inline-block;flex:0 0 auto;font-size:12px;line-height:1;color:#1976d2;filter:drop-shadow(0 0 1px rgba(25,118,210,.18))}
+@media(max-width:1250px){.filter-grid{grid-template-columns:repeat(3,minmax(140px,1fr))}.cold-icon{font-size:11px}}
+@media(max-width:820px){.filter-grid{grid-template-columns:1fr}}
