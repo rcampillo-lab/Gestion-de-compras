@@ -148,3 +148,27 @@
   .detail-dialog{width:94vw;max-width:94vw;min-width:0;border-radius:18px 0 0 18px}
   .detail-row{grid-template-columns:42% 1fr}
 }
+
+
+/* v1.6 · fechas dd/mm/aaaa, copo al final, sin columna Ver y proveedor más estrecho */
+#planTable .desc-content{display:flex;align-items:center;min-width:0;width:100%;gap:4px}
+#planTable .desc-text{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#planTable .cold-icon{order:2;flex:0 0 auto;margin-left:1px}
+#planTable .supplier-cell{min-width:0;max-width:none;width:auto}
+#planTable .supplier-ellipsis{display:block;width:100%;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Orden: Estado, Nº artículo, Descripción, Stock, Comp., Pend., Rot.60, Días, Mín., Cad., Sug., A pedir, Nota, Proveedor */
+#planTable th:nth-child(1),#planTable td:nth-child(1){width:6.5%}
+#planTable th:nth-child(2),#planTable td:nth-child(2){width:5.5%}
+#planTable th:nth-child(3),#planTable td:nth-child(3){width:25%}
+#planTable th:nth-child(4),#planTable td:nth-child(4){width:4%}
+#planTable th:nth-child(5),#planTable td:nth-child(5){width:4%}
+#planTable th:nth-child(6),#planTable td:nth-child(6){width:4.5%}
+#planTable th:nth-child(7),#planTable td:nth-child(7){width:4.5%}
+#planTable th:nth-child(8),#planTable td:nth-child(8){width:4%}
+#planTable th:nth-child(9),#planTable td:nth-child(9){width:4%}
+#planTable th:nth-child(10),#planTable td:nth-child(10){width:7%}
+#planTable th:nth-child(11),#planTable td:nth-child(11){width:4.5%}
+#planTable th:nth-child(12),#planTable td:nth-child(12){width:5.5%}
+#planTable th:nth-child(13),#planTable td:nth-child(13){width:10%}
+#planTable th:nth-child(14),#planTable td:nth-child(14){width:10%}

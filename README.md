@@ -65,3 +65,12 @@ No requiere build: `index.html`, `styles.css`, `app.js`.
 - Detalle del artículo como panel lateral derecho de media pantalla, con datos en filas.
 - Clic en la cantidad sugerida copia automáticamente la sugerencia al campo A pedir.
 - Nº de artículo y descripción también abren el detalle.
+
+
+## v1.6
+- Copo de nieve al final de la descripción.
+- Todas las fechas visibles en formato dd/mm/aaaa.
+- Eliminada la columna Ver.
+- Proveedor más estrecho con puntos suspensivos.
+- Respaldo de proveedor desde pedidos abiertos cuando el proveedor del STOCK viene vacío.
+- El query v1.4.5 mantiene el proveedor preferente de OITM cuando existe y, si está vacío, usa como respaldo el proveedor del último pedido de compra no cancelado. Esto permite recuperar proveedores como Lenda cuando la ficha de artículo no tiene CardCode informado.
