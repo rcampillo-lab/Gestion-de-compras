@@ -87,10 +87,17 @@ No requiere build: `index.html`, `styles.css`, `app.js`.
 - Las plantillas originales están embebidas en la app y no se guardan datos de sesión.
 
 
-## v1.8
+## v1.9
 - Mínimo y Comprometido clicables para copiar la cifra a **A pedir**.
 - Filtro **Solo con comprometido**.
 - Proveedor clicable para activar automáticamente el filtro de ese proveedor.
 - Nueva lógica de stock útil: un lote deja de computar para compra cuando su caducidad queda dentro de la mitad de la política de devolución.
 - El detalle separa stock físico, stock que no computa por caducidad y stock útil para compra.
 - La regla se aplica por lote; los lotes con vida suficiente siguen computando.
+
+
+## v1.9
+- Cantidades con formato inteligente: enteros sin decimales y cantidades fraccionarias conservan sus decimales.
+- A pedir acepta cantidades decimales y ya no redondea automáticamente.
+- Eliminada la columna Alta SAP del detalle de lotes.
+- Botón Quitar filtros para limpiar de una vez búsqueda y filtros de Planificar.
