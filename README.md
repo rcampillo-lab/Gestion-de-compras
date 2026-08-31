@@ -31,3 +31,10 @@ Las caducidades generan avisos, pero todavía no descuentan stock automáticamen
 - MSD: 6 meses para frío y 9 meses para no frío.
 
 No requiere build: `index.html`, `styles.css`, `app.js`.
+
+
+## Cambios v1.1
+- El filtro de almacén normaliza 1/2 a 01/02 para que SAP/Excel no rompa el filtrado.
+- Se elimina Código proveedor de la tabla principal; sigue disponible en el detalle y borrador.
+- La app ignora artículos inactivos si el fichero contiene `Inactivo`/`frozenFor` o `Activo`/`validFor`.
+- Recomendación de query: excluirlos directamente con `AND COALESCE(I."frozenFor", 'N') = 'N'` en ambos SELECT.
