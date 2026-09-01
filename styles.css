@@ -207,3 +207,36 @@
 @media(max-width:820px){.filter-grid{grid-template-columns:1fr}}
 
 .stock-expiry-adjusted{color:var(--orange);font-weight:950}
+
+
+/* v2.0 · nomenclatura operativa, bloques de compra y 16 columnas sin scroll horizontal */
+.plan-table-wrap{overflow-x:hidden}
+#planTable{width:100%;min-width:0;table-layout:fixed}
+#planTable th,#planTable td{padding-left:4px;padding-right:4px;overflow:hidden}
+#planTable th{font-size:9.2px;letter-spacing:.015em;white-space:normal;line-height:1.1}
+#planTable td{font-size:11px}
+#planTable .increment-qty-link,
+.detail-increment-qty{
+  border:0;background:transparent;padding:2px 3px;color:var(--blue-dark);font:inherit;font-weight:950;
+  border-radius:6px;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px
+}
+#planTable .increment-qty-link:hover,.detail-increment-qty:hover{background:var(--soft-blue);color:var(--blue)}
+/* Estado, Nº, Descripción, Stock, Pend.servir, Solic.prov, Rot60, Días, Mín, Cad, Caja, Mín.dto, Sug, A pedir, Nota, Proveedor */
+#planTable th:nth-child(1),#planTable td:nth-child(1){width:6%}
+#planTable th:nth-child(2),#planTable td:nth-child(2){width:5%}
+#planTable th:nth-child(3),#planTable td:nth-child(3){width:21%}
+#planTable th:nth-child(4),#planTable td:nth-child(4){width:4%}
+#planTable th:nth-child(5),#planTable td:nth-child(5){width:4.5%}
+#planTable th:nth-child(6),#planTable td:nth-child(6){width:5%}
+#planTable th:nth-child(7),#planTable td:nth-child(7){width:4%}
+#planTable th:nth-child(8),#planTable td:nth-child(8){width:3.5%}
+#planTable th:nth-child(9),#planTable td:nth-child(9){width:3.5%}
+#planTable th:nth-child(10),#planTable td:nth-child(10){width:6%}
+#planTable th:nth-child(11),#planTable td:nth-child(11){width:4%}
+#planTable th:nth-child(12),#planTable td:nth-child(12){width:5%}
+#planTable th:nth-child(13),#planTable td:nth-child(13){width:4.5%}
+#planTable th:nth-child(14),#planTable td:nth-child(14){width:5.5%}
+#planTable th:nth-child(15),#planTable td:nth-child(15){width:8.5%}
+#planTable th:nth-child(16),#planTable td:nth-child(16){width:9%}
+#planTable .comment-pill,#planTable .supplier-ellipsis{max-width:100%}
+@media(max-width:1300px){#planTable th{font-size:8.2px}#planTable td{font-size:9.8px}#planTable .order-input{width:100%;min-width:0;padding:4px 2px;font-size:9.5px}}

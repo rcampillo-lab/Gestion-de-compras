@@ -1,103 +1,16 @@
-# Asistente de compras · PROVESA
+# Asistente de compras PROVESA v2.0
 
-Aplicación web estática para trabajar con el resultado del query maestro de SAP Business One HANA.
+Aplicación de sesión: no persiste los datos cargados ni el borrador.
 
-## Sin persistencia
-- No usa localStorage.
-- No usa base de datos.
-- No envía el Excel a ningún backend.
-- Los datos, filtros y borrador viven solo en la memoria de la pestaña.
-- Al recargar o cerrar la página se pierde la sesión.
+## Cambios v2.0
+- `Comprometido` se muestra como **Pendiente de servir**.
+- `Pendiente compra` se muestra como **Solicitado a proveedor**.
+- Nuevas columnas **Uds caja** y **Uds mín. dto.** antes de Sugerido.
+- Uds caja y Uds mín. dto. son acumulativas: cada clic suma ese bloque a `A pedir`.
+- Sugerencia por cobertura: general 30 días, MSD 75 días, Elanco 60 días y Lenda 60 días.
+- La sugerencia descuenta stock útil, pendiente de servir y solicitado a proveedor, y redondea por caja.
+- El proveedor del artículo está preparado para leer `Proveedor última compra` del nuevo query.
+- El detalle muestra los 3 últimos clientes, cantidad y fecha cuando el query los incluye.
+- Se mantienen filtros, lotes/caducidad, pedidos abiertos y plantillas MSD.
 
-## Flujo
-1. Ejecutar el query maestro en SAP B1 y exportar a Excel/CSV.
-2. Cargar el archivo en la app.
-3. La app separa STOCK y PEDIDO por `Tipo registro`.
-4. La pantalla principal se agrupa por `Nº artículo + Almacén`; los datos de stock repetidos por lote no se suman.
-5. Los lotes quedan en el detalle del artículo.
-6. Las líneas PEDIDO se muestran en el seguimiento de pedidos de proveedor.
-7. `A pedir` genera un borrador temporal.
-8. `Exportar Excel SAP` crea `Nº artículo | Cantidad`.
-
-## Motor de compra v1
-Demanda diaria = Rot. 60 / 60. Objetivo = máximo entre mínimo de inventario y demanda para los días objetivo. Disponible = máximo de Stock - Comprometido y 0. Proyectado = Disponible + Pendiente compra. Necesidad = Objetivo - Proyectado. El resultado se redondea hacia arriba por `Uds caja`.
-
-Las caducidades generan avisos, pero todavía no descuentan stock automáticamente del cálculo de compra; afinaremos esa lógica FEFO después.
-
-## Políticas en código
-- General: 12 meses.
-- FATRO: sin política.
-- VETNOVA: sin política.
-- MSD: 6 meses para frío y 9 meses para no frío.
-
-No requiere build: `index.html`, `styles.css`, `app.js`.
-
-
-## Cambios v1.1
-- El filtro de almacén normaliza 1/2 a 01/02 para que SAP/Excel no rompa el filtrado.
-- Se elimina Código proveedor de la tabla principal; sigue disponible en el detalle y borrador.
-- La app ignora artículos inactivos si el fichero contiene `Inactivo`/`frozenFor` o `Activo`/`validFor`.
-- Recomendación de query: excluirlos directamente con `AND COALESCE(I."frozenFor", 'N') = 'N'` en ambos SELECT.
-
-
-## v1.2
-- Proveedor con ancho fijo y puntos suspensivos en tablas para mantener una vista compacta.
-- Nombre completo visible al pasar el ratón sobre el proveedor.
-
-
-## v1.3
-- La tabla principal usa todo el ancho disponible y no requiere desplazamiento horizontal.
-- Descripción, comentario y proveedor se recortan con puntos suspensivos y muestran el texto completo al pasar el ratón.
-- Cabeceras compactadas y botón de detalle reducido para mantener visibles todas las columnas.
-- Los estados incluyen explicación en tooltip.
-
-
-## v1.4
-- Copo de nieve junto al código para artículos con Frío = Y.
-- Filtro Área: Todos / Animales de compañía (Propiedad 1) / Producción (Propiedad 2).
-- Filtro de producción: Porcino (Propiedad 3) / Rumiantes (Propiedad 4); se oculta al seleccionar Animales de compañía.
-- El query debe incluir QryGroup1..QryGroup4 con los alias usados por la app.
-
-
-## v1.5
-- Copo de nieve movido del número de artículo a la descripción.
-- Orden de tabla principal: Ver, Estado, Nº artículo, Descripción, Stock, Comp., Pend., Rot.60, Días, Mín., Cad., Sug., A pedir, Nota, Proveedor.
-- Detalle del artículo como panel lateral derecho de media pantalla, con datos en filas.
-- Clic en la cantidad sugerida copia automáticamente la sugerencia al campo A pedir.
-- Nº de artículo y descripción también abren el detalle.
-
-
-## v1.6
-- Copo de nieve al final de la descripción.
-- Todas las fechas visibles en formato dd/mm/aaaa.
-- Eliminada la columna Ver.
-- Proveedor más estrecho con puntos suspensivos.
-- Respaldo de proveedor desde pedidos abiertos cuando el proveedor del STOCK viene vacío.
-- El query v1.4.5 mantiene el proveedor preferente de OITM cuando existe y, si está vacío, usa como respaldo el proveedor del último pedido de compra no cancelado. Esto permite recuperar proveedores como Lenda cuando la ficha de artículo no tiene CardCode informado.
-
-
-## v1.7 · Plantillas MSD
-- Integradas las tres plantillas 2026 de MSD: Animales de compañía, Porcino y Rumiantes.
-- Clasificación automática por propiedades SAP: Propiedad 1 -> compañía, Propiedad 3 -> porcino, Propiedad 4 -> rumiantes.
-- Las posiciones ambiguas se marcan como Revisar clasificación.
-- El código de catálogo del proveedor se usa para localizar la línea de la plantilla.
-- Se limpian las cantidades de ejemplo de la plantilla antes de generar cada pedido.
-- Porcino calcula la columna DOSIS cuando la unidad de venta contiene dosis.
-- Rumiantes conserva las fórmulas de importe y actualiza sus valores.
-- Las plantillas originales están embebidas en la app y no se guardan datos de sesión.
-
-
-## v1.9
-- Mínimo y Comprometido clicables para copiar la cifra a **A pedir**.
-- Filtro **Solo con comprometido**.
-- Proveedor clicable para activar automáticamente el filtro de ese proveedor.
-- Nueva lógica de stock útil: un lote deja de computar para compra cuando su caducidad queda dentro de la mitad de la política de devolución.
-- El detalle separa stock físico, stock que no computa por caducidad y stock útil para compra.
-- La regla se aplica por lote; los lotes con vida suficiente siguen computando.
-
-
-## v1.9
-- Cantidades con formato inteligente: enteros sin decimales y cantidades fraccionarias conservan sus decimales.
-- A pedir acepta cantidades decimales y ya no redondea automáticamente.
-- Eliminada la columna Alta SAP del detalle de lotes.
-- Botón Quitar filtros para limpiar de una vez búsqueda y filtros de Planificar.
+> `Uds mín. dto.` usa el campo que el query entrega como `Uds mín. descuento` / `Mínimo pedido`.
