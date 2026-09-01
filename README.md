@@ -12,3 +12,8 @@ Aplicación de sesión para cargar el Excel generado por SAP Business One y prep
 - Las plantillas MSD siguen disponibles en los bloques superiores de cada pedido MSD.
 
 La aplicación no guarda datos entre sesiones.
+
+## v2.4
+- Cabeceras del Borrador clicables para ordenar por artículo, descripción, cantidad, precio, descuento, sugerido o importe.
+- Total base visible arriba del borrador y total por pedido/proveedor en cada cabecera.
+- Las líneas MSD mal referenciadas se resaltan en rojo e indican el motivo: clasificación ambigua, código ausente o código no localizado en la plantilla.
