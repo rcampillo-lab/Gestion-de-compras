@@ -10,6 +10,8 @@
   {
     itemCode: '005646',
     minDiscountQty: 30,
+    discountPct: 10,          // opcional: descuento sobre el precio base SAP
+    promoUnitPrice: null,     // opcional: precio unitario promocional; si existe prevalece sobre discountPct
     validFrom: '2026-09-01',   // opcional, AAAA-MM-DD
     validTo: '2026-09-30',     // opcional, AAAA-MM-DD
     label: 'Promoción septiembre MSD',

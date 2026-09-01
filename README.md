@@ -1,25 +1,14 @@
-# Asistente de compras PROVESA v2.1
+# Asistente de compras PROVESA v2.3
 
-Aplicación de sesión: no persiste los datos cargados ni el borrador.
+Aplicación de sesión para cargar el Excel generado por SAP Business One y preparar pedidos de proveedor.
 
-## Cambios v2.1
-- `Comprometido` se muestra como **Pendiente de servir**.
-- `Pendiente compra` se muestra como **Solicitado a proveedor**.
-- Nuevas columnas **Uds caja** y **Uds mín. dto.** antes de Sugerido.
-- Uds caja y Uds mín. dto. son acumulativas: cada clic suma ese bloque a `A pedir`.
-- Sugerencia por cobertura: general 30 días, MSD 75 días, Elanco 60 días y Lenda 60 días.
-- La sugerencia descuenta stock útil, pendiente de servir y solicitado a proveedor, y redondea por caja.
-- El proveedor del artículo está preparado para leer `Proveedor última compra` del nuevo query.
-- El detalle muestra los 3 últimos clientes, cantidad y fecha cuando el query los incluye.
-- Se mantienen filtros, lotes/caducidad, pedidos abiertos y plantillas MSD.
+## Borrador v2.3
+- El código de catálogo del proveedor queda oculto en la tabla del borrador, aunque se conserva internamente para las plantillas MSD.
+- Se eliminan las columnas `Plantilla MSD` y `Almacén` del borrador.
+- Orden de columnas: Nº artículo, Descripción, Cantidad, Precio, Descuento, Sugerido, Importe base.
+- Los artículos de frío muestran ❄ al final de la descripción.
+- Nº de artículo y descripción son clicables y abren el mismo detalle lateral del artículo.
+- La columna Descuento queda editable (0–100 %) y se conserva solo durante la sesión. Todavía no modifica precios, importes ni exportaciones.
+- Las plantillas MSD siguen disponibles en los bloques superiores de cada pedido MSD.
 
-> `Uds mín. dto.` usa el campo que el query entrega como `Uds mín. descuento` / `Mínimo pedido`.
-
-
-## v2.1 · Promociones de proveedor
-- `Uds. caja` continúa viniendo del query SAP (`U_ARTES_UCAJ`).
-- `Uds. mín. descuento` deja de tomar cualquier valor de `OITW.MinOrder`/SAP.
-- Las cantidades mínimas para descuento se mantienen en `promotions.js` como reglas comerciales por artículo.
-- Las reglas pueden incluir fechas de vigencia, etiqueta y nota.
-- Si no hay una promoción activa para un artículo, la tabla muestra `—`.
-- Cada clic en una cantidad mínima activa sigue sumando ese bloque a `A pedir`.
+La aplicación no guarda datos entre sesiones.
