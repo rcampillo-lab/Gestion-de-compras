@@ -118,6 +118,7 @@
         <div class="config-grid">
           <section class="panel"><p class="eyebrow dark">MOTOR DE COMPRA</p><h2>Cobertura automática por proveedor</h2><div class="policy-list"><div><strong>General</strong><span>1 mes · 30 días</span></div><div><strong>MSD</strong><span>2,5 meses · 75 días</span></div><div><strong>Elanco</strong><span>2 meses · 60 días</span></div><div><strong>Lenda</strong><span>2 meses · 60 días</span></div></div><div class="config-form"><label>Umbral de exceso (días)<input id="excessDaysInput" type="number" min="1" step="1" value="120" /></label></div><p class="help">La sugerencia usa la rotación media de los últimos 60 días, la cobertura correspondiente al último proveedor de compra, el stock útil por caducidad, lo pendiente de servir y lo ya solicitado al proveedor. Después redondea por unidades de caja cuando están informadas.</p></section>
           <section class="panel"><p class="eyebrow dark">POLÍTICAS DE DEVOLUCIÓN</p><h2>Reglas incluidas en código</h2><div class="policy-list"><div><strong>General</strong><span>12 meses</span></div><div><strong>FATRO</strong><span>Sin política</span></div><div><strong>VETNOVA</strong><span>Sin política</span></div><div><strong>MSD · frío</strong><span>6 meses</span></div><div><strong>MSD · no frío</strong><span>9 meses</span></div></div></section>
+          <section class="panel"><p class="eyebrow dark">PROMOCIONES</p><h2>Unidades mínimas para descuento</h2><p class="help">No se leen de SAP. Se cargan en la configuración de la app a partir de las promociones que envían los proveedores. Pueden tener fecha de inicio y fin; fuera de vigencia se muestran como —.</p></section>
           <section class="panel"><p class="eyebrow dark">DATOS</p><h2>Sin persistencia</h2><ul class="plain-list"><li>No se guarda el Excel.</li><li>No se guarda el borrador.</li><li>No se usa localStorage.</li><li>No hay base de datos ni backend.</li><li>Recargar la página reinicia todo.</li></ul></section>
         </div>
       </section>
@@ -129,6 +130,7 @@
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
   <script src="msd-templates.js"></script>
+  <script src="promotions.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

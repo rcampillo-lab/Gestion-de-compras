@@ -1,8 +1,8 @@
-# Asistente de compras PROVESA v2.0
+# Asistente de compras PROVESA v2.1
 
 Aplicación de sesión: no persiste los datos cargados ni el borrador.
 
-## Cambios v2.0
+## Cambios v2.1
 - `Comprometido` se muestra como **Pendiente de servir**.
 - `Pendiente compra` se muestra como **Solicitado a proveedor**.
 - Nuevas columnas **Uds caja** y **Uds mín. dto.** antes de Sugerido.
@@ -14,3 +14,12 @@ Aplicación de sesión: no persiste los datos cargados ni el borrador.
 - Se mantienen filtros, lotes/caducidad, pedidos abiertos y plantillas MSD.
 
 > `Uds mín. dto.` usa el campo que el query entrega como `Uds mín. descuento` / `Mínimo pedido`.
+
+
+## v2.1 · Promociones de proveedor
+- `Uds. caja` continúa viniendo del query SAP (`U_ARTES_UCAJ`).
+- `Uds. mín. descuento` deja de tomar cualquier valor de `OITW.MinOrder`/SAP.
+- Las cantidades mínimas para descuento se mantienen en `promotions.js` como reglas comerciales por artículo.
+- Las reglas pueden incluir fechas de vigencia, etiqueta y nota.
+- Si no hay una promoción activa para un artículo, la tabla muestra `—`.
+- Cada clic en una cantidad mínima activa sigue sumando ese bloque a `A pedir`.
