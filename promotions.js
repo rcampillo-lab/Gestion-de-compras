@@ -5,8 +5,8 @@
   No proceden de SAP. Se mantienen como configuración fija de la app.
 
   Fatro Animales de Compañía: Oferta Distribuidor, cruce por código de catálogo.
-  Fatro Ganadería: Lista de precios distribuidor 2026, cruce conservador por
-  descripción normalizada dentro de artículos de Producción/Porcino/Rumiantes.
+  Fatro Ganadería: Lista de precios distribuidor 2026, cruce por código interno
+  SAP/PROVESA según el catálogo con códigos internos facilitado.
   Para Ganadería solo se usan Cantidad (mínimo) y Descuento.
 */
 window.PROVESA_PROMOTIONS = [
@@ -1163,7 +1163,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "AD live SUIVAX 500 dosis",
+    "itemCode": "5082",
     "minDiscountQty": 4.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1173,7 +1173,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Algenamic 100 ml",
+    "itemCode": "5546",
     "minDiscountQty": 160.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1183,7 +1183,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Algenamic 250 ml",
+    "itemCode": "5547",
     "minDiscountQty": 240.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1193,7 +1193,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Alutopic Spray 200 ml",
+    "itemCode": "5504",
     "minDiscountQty": 300.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1203,7 +1203,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Alutopic Spray 400 ml",
+    "itemCode": "5597",
     "minDiscountQty": 144.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1213,7 +1213,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Biosweet M 5 kg",
+    "itemCode": "5259",
     "minDiscountQty": 5.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1223,7 +1223,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Biosweet M 25 kg",
+    "itemCode": "5249",
     "minDiscountQty": 4.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1233,7 +1233,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Biopracid AG líquido 5 l.",
+    "itemCode": "5434",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1243,7 +1243,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Biopracid Cu líquido 5 l.",
+    "itemCode": "5443",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1253,7 +1253,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Biopracid Cu líquido 25 l.",
+    "itemCode": "5444",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1263,7 +1263,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Biopracid HM líquido 1 l.",
+    "itemCode": "5436",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1273,7 +1273,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "BimoduLa 100 ml",
+    "itemCode": "5611",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1283,7 +1283,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "BimoduLa 250 ml",
+    "itemCode": "5591",
     "minDiscountQty": 150.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1293,7 +1293,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Camdolor 100 ml",
+    "itemCode": "5490",
     "minDiscountQty": 160.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1303,7 +1303,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Camdolor 250 ml",
+    "itemCode": "5527",
     "minDiscountQty": 300.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1313,7 +1313,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Crinar (expositor 24 jeringas)",
+    "itemCode": "5105",
     "minDiscountQty": 6.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1323,7 +1323,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dalmaglass Vacas 20 bolos",
+    "itemCode": "5481",
     "minDiscountQty": 24.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1333,7 +1333,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dalmaprost 100 ml Flexibag",
+    "itemCode": "5537",
     "minDiscountQty": 12.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1343,7 +1343,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dalmarelin 5 x10 ml",
+    "itemCode": "5100",
     "minDiscountQty": 20.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1353,7 +1353,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dalmarelin 100 ml Flexibag",
+    "itemCode": "5530",
     "minDiscountQty": 12.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1363,7 +1363,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dalmavital 50 ml.",
+    "itemCode": "5095",
     "minDiscountQty": 56.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1373,7 +1373,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dalmazin 15 x 2 ml.",
+    "itemCode": "5137",
     "minDiscountQty": 40.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1383,7 +1383,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dalmazin lata 5 x 20 ml",
+    "itemCode": "5063",
     "minDiscountQty": 24.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1393,7 +1393,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Deyanil Retard 50 ml",
+    "itemCode": "5031",
     "minDiscountQty": 56.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1403,7 +1403,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dolofenac 100 ml",
+    "itemCode": "5332",
     "minDiscountQty": 150.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1413,7 +1413,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Dolofenac 250 ml",
+    "itemCode": "5333",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1423,7 +1423,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Doxidol 30% 1 kg",
+    "itemCode": "5381",
     "minDiscountQty": 500.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1433,7 +1433,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Doxidol Terneros 30% 1 kg",
+    "itemCode": "5382",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1443,7 +1443,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Drofilsa 1 litro",
+    "itemCode": "5101",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1453,7 +1453,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Epromec 5 l.",
+    "itemCode": "5404",
     "minDiscountQty": 4.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1463,7 +1463,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Eupen Plus 100 ml",
+    "itemCode": "5081",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1473,7 +1473,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Eupen Plus 250 ml",
+    "itemCode": "5004",
     "minDiscountQty": 150.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1483,7 +1483,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Eupensol 1 Kg",
+    "itemCode": "5096",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1493,7 +1493,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Euthoxin 50 %",
+    "itemCode": "5471",
     "minDiscountQty": 35.0,
     "discountPct": 8.0,
     "promoUnitPrice": null,
@@ -1503,7 +1503,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Fatroflox 250 ml",
+    "itemCode": "5122",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1513,7 +1513,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Fatromine 100 ml.",
+    "itemCode": "5098",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1523,7 +1523,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Fatromine 250 ml.",
+    "itemCode": "5099",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1533,7 +1533,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Fatroseal 60 jeringas",
+    "itemCode": "5555",
     "minDiscountQty": 12.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1543,7 +1543,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Fatroseal 120 jeringas",
+    "itemCode": "5556",
     "minDiscountQty": 8.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1553,7 +1553,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Finvirus ECO 5 litros",
+    "itemCode": "5571",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1563,7 +1563,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Finvirus ECO 25 litros",
+    "itemCode": "5572",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1573,7 +1573,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Flavopectin 3 kg.",
+    "itemCode": "5089",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1583,7 +1583,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Gastozole 7 jeringas (Caballos)",
+    "itemCode": "10",
     "minDiscountQty": 8.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1593,7 +1593,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "GentaVet 500 g",
+    "itemCode": "5519",
     "minDiscountQty": 500.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1603,7 +1603,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Idrion 1 Litro",
+    "itemCode": "5045",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1613,7 +1613,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Ketabel 25 ml",
+    "itemCode": "5596",
     "minDiscountQty": 80.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1623,7 +1623,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Ketofarm 100 ml",
+    "itemCode": "5318",
     "minDiscountQty": 90.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1633,7 +1633,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Ketofarm 250 ml",
+    "itemCode": "5319",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1643,7 +1643,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Keytil 250 ml",
+    "itemCode": "5483",
     "minDiscountQty": 50.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1653,7 +1653,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Lidobel 100 ml (caballos)",
+    "itemCode": "5599",
     "minDiscountQty": 80.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1663,17 +1663,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Lincomastina 20 jer. (2025)",
-    "minDiscountQty": 12.0,
-    "discountPct": 4.0,
-    "promoUnitPrice": null,
-    "label": "Fatro · Ganadería · Oferta distribuidor",
-    "note": "Lincomastina 20 jer. (2025)"
-  },
-  {
-    "supplierMatch": "fatro",
-    "segment": "production",
-    "descriptionMatch": "Liverfine 100 ml.",
+    "itemCode": "5176",
     "minDiscountQty": 240.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1683,7 +1673,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Marbovet 2% 250 ml",
+    "itemCode": "5305",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1693,7 +1683,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Marbovet 10 % 250 ml",
+    "itemCode": "5307",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1703,7 +1693,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Masterflox 4% 250 ml",
+    "itemCode": "5389",
     "minDiscountQty": 500.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1713,7 +1703,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Mastdecide (10 test)",
+    "itemCode": "5526",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1723,7 +1713,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Metabolik 500 ml",
+    "itemCode": "5484",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1733,7 +1723,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Nanut Foal 5 kg (leche caballos)",
+    "itemCode": "5311",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1743,7 +1733,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Neopradinol 10 kg",
+    "itemCode": "5478",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1753,7 +1743,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Pasmopina 50 ml",
+    "itemCode": "5241",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1763,7 +1753,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Porcidax 25 Kg",
+    "itemCode": "5015",
     "minDiscountQty": 40.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1773,7 +1763,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Pronestesic 50 ml",
+    "itemCode": "5427",
     "minDiscountQty": 50.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1783,7 +1773,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Rapison 100 ml.",
+    "itemCode": "5536",
     "minDiscountQty": 200.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1793,7 +1783,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Rifametrin (6 sprays)",
+    "itemCode": "5570",
     "minDiscountQty": 18.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1803,7 +1793,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Rifacetril 4 jeringas",
+    "itemCode": "5225",
     "minDiscountQty": 40.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1813,7 +1803,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Rifacetril 24 jer.",
+    "itemCode": "5250",
     "minDiscountQty": 12.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1823,7 +1813,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Rimastina 60 jeringas",
+    "itemCode": "5261",
     "minDiscountQty": 24.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1833,7 +1823,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Rumidigest 35 (2 X 55 gr)",
+    "itemCode": "5326",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1843,7 +1833,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Tirsanicol 250 ml",
+    "itemCode": "5252",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1853,7 +1843,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "TirsanOral 4,3 litros",
+    "itemCode": "5297",
     "minDiscountQty": 500.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1863,7 +1853,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Ulfaprisol 10 x 1 kg.",
+    "itemCode": "5222",
     "minDiscountQty": 20.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1873,7 +1863,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Uriavit BC Carnitina 10 Kg",
+    "itemCode": "5024",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1883,7 +1873,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "descriptionMatch": "Vetidina AD3E 50 ml",
+    "itemCode": "5042",
     "minDiscountQty": 56.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
