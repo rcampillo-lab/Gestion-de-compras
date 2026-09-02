@@ -1,21 +1,12 @@
-# Asistente de compras PROVESA v2.5
+# Asistente de compras · PROVESA v2.7
 
-Aplicacion de sesion para cargar el Excel generado por SAP Business One y preparar pedidos de proveedor.
+Aplicación 100 % de sesión: al recargar o cerrar la página se pierden los datos cargados y el borrador.
 
-## Correcciones v2.5
-- Corregido `Aceptar sugerencias visibles`: la funcion faltaba en v2.4 y bloqueaba el registro de eventos de los dos botones de la barra superior.
-- `Aceptar sugerencias visibles` copia al borrador la sugerencia de cada articulo que este visible con los filtros actuales y tenga sugerencia mayor que cero.
-- `Preparar pedido (n)` vuelve a abrir correctamente la pestana Borrador.
-- MSD se separa en pedidos independientes por division: Animales de compania, Porcino y Rumiantes.
-- Cada pedido MSD tiene sus propias posiciones, unidades, total y boton para generar su plantilla correspondiente.
-- Las referencias MSD con clasificacion ambigua quedan en un bloque separado `Revisar clasificacion` y no entran en ninguna plantilla.
-- Se conservan ordenacion del borrador, validacion roja de referencias, precios, descuento preparado y totales.
+## Promociones incorporadas
+- FATRO Animales de Compañía: Oferta Distribuidor. Cruce por código de catálogo de proveedor.
+- FATRO Ganadería: lista distribuidor 2026. Cruce conservador por descripción normalizada únicamente para artículos clasificados como Producción / Porcino / Rumiantes.
+- En Ganadería solo se usan las columnas Cantidad (mínimo para oferta) y Descuento.
+- La cifra de Uds. mín. dto. es acumulativa al pulsarla y su tooltip muestra el porcentaje de descuento.
+- Al alcanzar el mínimo, el descuento pasa automáticamente al borrador y al total neto del pedido.
 
-La aplicacion no guarda datos entre sesiones.
-
-
-## v2.6
-- Condiciones Fatro Oferta Distribuidor cargadas como vigentes hasta sustitución.
-- Cruce por código de catálogo Fatro.
-- Uds. mín. dto. muestra por tooltip el % de descuento.
-- Al alcanzar la cantidad mínima, el descuento Fatro se rellena automáticamente en el borrador.
+No se incluye ningún query SAP en este ZIP.
