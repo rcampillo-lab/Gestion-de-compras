@@ -12,3 +12,10 @@ Aplicacion de sesion para cargar el Excel generado por SAP Business One y prepar
 - Se conservan ordenacion del borrador, validacion roja de referencias, precios, descuento preparado y totales.
 
 La aplicacion no guarda datos entre sesiones.
+
+
+## v2.6
+- Condiciones Fatro Oferta Distribuidor cargadas como vigentes hasta sustitución.
+- Cruce por código de catálogo Fatro.
+- Uds. mín. dto. muestra por tooltip el % de descuento.
+- Al alcanzar la cantidad mínima, el descuento Fatro se rellena automáticamente en el borrador.

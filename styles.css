@@ -290,3 +290,6 @@
 .supplier-group-msd .supplier-group-header h3{color:var(--blue-dark)}
 .supplier-group-review{border-color:#efb2ad}
 .supplier-group-review .supplier-group-header{background:#fff3f2}
+
+/* Fatro / promociones de distribuidor */
+.draft-discount-input.auto-promo-discount{font-weight:800;}
