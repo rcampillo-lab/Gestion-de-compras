@@ -5,8 +5,8 @@
   No proceden de SAP. Se mantienen como configuración fija de la app.
 
   Fatro Animales de Compañía: Oferta Distribuidor, cruce por código de catálogo.
-  Fatro Ganadería: Lista de precios distribuidor 2026, cruce por código interno
-  SAP/PROVESA según el catálogo con códigos internos facilitado.
+  Fatro Ganadería: Lista de precios distribuidor 2026, cruce por código de catálogo Fatro
+  (campo Código catálogo proveedor del archivo SAP).
   Para Ganadería solo se usan Cantidad (mínimo) y Descuento.
 */
 window.PROVESA_PROMOTIONS = [
@@ -1163,7 +1163,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5082",
+    "supplierCatalog": "5082",
     "minDiscountQty": 4.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1173,7 +1173,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5546",
+    "supplierCatalog": "5546",
     "minDiscountQty": 160.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1183,7 +1183,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5547",
+    "supplierCatalog": "5547",
     "minDiscountQty": 240.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1193,7 +1193,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5504",
+    "supplierCatalog": "5504",
     "minDiscountQty": 300.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1203,7 +1203,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5597",
+    "supplierCatalog": "5597",
     "minDiscountQty": 144.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1213,7 +1213,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5259",
+    "supplierCatalog": "5259",
     "minDiscountQty": 5.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1223,7 +1223,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5249",
+    "supplierCatalog": "5249",
     "minDiscountQty": 4.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1233,7 +1233,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5434",
+    "supplierCatalog": "5434",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1243,7 +1243,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5443",
+    "supplierCatalog": "5443",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1253,7 +1253,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5444",
+    "supplierCatalog": "5444",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1263,7 +1263,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5436",
+    "supplierCatalog": "5436",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1273,7 +1273,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5611",
+    "supplierCatalog": "5611",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1283,7 +1283,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5591",
+    "supplierCatalog": "5591",
     "minDiscountQty": 150.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1293,7 +1293,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5490",
+    "supplierCatalog": "5490",
     "minDiscountQty": 160.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1303,7 +1303,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5527",
+    "supplierCatalog": "5527",
     "minDiscountQty": 300.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1313,7 +1313,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5105",
+    "supplierCatalog": "5105",
     "minDiscountQty": 6.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1323,7 +1323,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5481",
+    "supplierCatalog": "5481",
     "minDiscountQty": 24.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1333,7 +1333,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5537",
+    "supplierCatalog": "5537",
     "minDiscountQty": 12.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1343,7 +1343,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5100",
+    "supplierCatalog": "5100",
     "minDiscountQty": 20.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1353,7 +1353,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5530",
+    "supplierCatalog": "5530",
     "minDiscountQty": 12.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1363,7 +1363,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5095",
+    "supplierCatalog": "5095",
     "minDiscountQty": 56.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1373,7 +1373,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5137",
+    "supplierCatalog": "5137",
     "minDiscountQty": 40.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1383,7 +1383,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5063",
+    "supplierCatalog": "5063",
     "minDiscountQty": 24.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1393,7 +1393,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5031",
+    "supplierCatalog": "5031",
     "minDiscountQty": 56.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1403,7 +1403,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5332",
+    "supplierCatalog": "5332",
     "minDiscountQty": 150.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1413,7 +1413,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5333",
+    "supplierCatalog": "5333",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1423,7 +1423,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5381",
+    "supplierCatalog": "5381",
     "minDiscountQty": 500.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1433,7 +1433,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5382",
+    "supplierCatalog": "5382",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1443,7 +1443,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5101",
+    "supplierCatalog": "5101",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1453,7 +1453,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5404",
+    "supplierCatalog": "5404",
     "minDiscountQty": 4.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1463,7 +1463,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5081",
+    "supplierCatalog": "5081",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1473,7 +1473,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5004",
+    "supplierCatalog": "5004",
     "minDiscountQty": 150.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1483,7 +1483,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5096",
+    "supplierCatalog": "5096",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1493,7 +1493,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5471",
+    "supplierCatalog": "5471",
     "minDiscountQty": 35.0,
     "discountPct": 8.0,
     "promoUnitPrice": null,
@@ -1503,7 +1503,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5122",
+    "supplierCatalog": "5122",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1513,7 +1513,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5098",
+    "supplierCatalog": "5098",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1523,7 +1523,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5099",
+    "supplierCatalog": "5099",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1533,7 +1533,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5555",
+    "supplierCatalog": "5555",
     "minDiscountQty": 12.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1543,7 +1543,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5556",
+    "supplierCatalog": "5556",
     "minDiscountQty": 8.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1553,7 +1553,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5571",
+    "supplierCatalog": "5571",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1563,7 +1563,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5572",
+    "supplierCatalog": "5572",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1573,7 +1573,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5089",
+    "supplierCatalog": "5089",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1583,7 +1583,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "10",
+    "supplierCatalog": "10",
     "minDiscountQty": 8.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1593,7 +1593,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5519",
+    "supplierCatalog": "5519",
     "minDiscountQty": 500.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1603,7 +1603,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5045",
+    "supplierCatalog": "5045",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1613,7 +1613,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5596",
+    "supplierCatalog": "5596",
     "minDiscountQty": 80.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1623,7 +1623,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5318",
+    "supplierCatalog": "5318",
     "minDiscountQty": 90.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1633,7 +1633,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5319",
+    "supplierCatalog": "5319",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1643,7 +1643,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5483",
+    "supplierCatalog": "5483",
     "minDiscountQty": 50.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1653,7 +1653,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5599",
+    "supplierCatalog": "5599",
     "minDiscountQty": 80.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1663,7 +1663,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5176",
+    "supplierCatalog": "5176",
     "minDiscountQty": 240.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1673,7 +1673,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5305",
+    "supplierCatalog": "5305",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1683,7 +1683,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5307",
+    "supplierCatalog": "5307",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1693,7 +1693,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5389",
+    "supplierCatalog": "5389",
     "minDiscountQty": 500.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1703,7 +1703,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5526",
+    "supplierCatalog": "5526",
     "minDiscountQty": 1.0,
     "discountPct": 0.0,
     "promoUnitPrice": null,
@@ -1713,7 +1713,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5484",
+    "supplierCatalog": "5484",
     "minDiscountQty": 120.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1723,7 +1723,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5311",
+    "supplierCatalog": "5311",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1733,7 +1733,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5478",
+    "supplierCatalog": "5478",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1743,7 +1743,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5241",
+    "supplierCatalog": "5241",
     "minDiscountQty": 100.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1753,7 +1753,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5015",
+    "supplierCatalog": "5015",
     "minDiscountQty": 40.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1763,7 +1763,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5427",
+    "supplierCatalog": "5427",
     "minDiscountQty": 50.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1773,7 +1773,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5536",
+    "supplierCatalog": "5536",
     "minDiscountQty": 200.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1783,7 +1783,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5570",
+    "supplierCatalog": "5570",
     "minDiscountQty": 18.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1793,7 +1793,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5225",
+    "supplierCatalog": "5225",
     "minDiscountQty": 40.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1803,7 +1803,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5250",
+    "supplierCatalog": "5250",
     "minDiscountQty": 12.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1813,7 +1813,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5261",
+    "supplierCatalog": "5261",
     "minDiscountQty": 24.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1823,7 +1823,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5326",
+    "supplierCatalog": "5326",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1833,7 +1833,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5252",
+    "supplierCatalog": "5252",
     "minDiscountQty": 60.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1843,7 +1843,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5297",
+    "supplierCatalog": "5297",
     "minDiscountQty": 500.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1853,7 +1853,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5222",
+    "supplierCatalog": "5222",
     "minDiscountQty": 20.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1863,7 +1863,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5024",
+    "supplierCatalog": "5024",
     "minDiscountQty": 10.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
@@ -1873,7 +1873,7 @@ window.PROVESA_PROMOTIONS = [
   {
     "supplierMatch": "fatro",
     "segment": "production",
-    "itemCode": "5042",
+    "supplierCatalog": "5042",
     "minDiscountQty": 56.0,
     "discountPct": 4.0,
     "promoUnitPrice": null,
