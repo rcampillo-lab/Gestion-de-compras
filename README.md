@@ -1,19 +1,14 @@
-# Asistente de compras PROVESA v2.3
+# Asistente de compras PROVESA v2.5
 
-Aplicación de sesión para cargar el Excel generado por SAP Business One y preparar pedidos de proveedor.
+Aplicacion de sesion para cargar el Excel generado por SAP Business One y preparar pedidos de proveedor.
 
-## Borrador v2.3
-- El código de catálogo del proveedor queda oculto en la tabla del borrador, aunque se conserva internamente para las plantillas MSD.
-- Se eliminan las columnas `Plantilla MSD` y `Almacén` del borrador.
-- Orden de columnas: Nº artículo, Descripción, Cantidad, Precio, Descuento, Sugerido, Importe base.
-- Los artículos de frío muestran ❄ al final de la descripción.
-- Nº de artículo y descripción son clicables y abren el mismo detalle lateral del artículo.
-- La columna Descuento queda editable (0–100 %) y se conserva solo durante la sesión. Todavía no modifica precios, importes ni exportaciones.
-- Las plantillas MSD siguen disponibles en los bloques superiores de cada pedido MSD.
+## Correcciones v2.5
+- Corregido `Aceptar sugerencias visibles`: la funcion faltaba en v2.4 y bloqueaba el registro de eventos de los dos botones de la barra superior.
+- `Aceptar sugerencias visibles` copia al borrador la sugerencia de cada articulo que este visible con los filtros actuales y tenga sugerencia mayor que cero.
+- `Preparar pedido (n)` vuelve a abrir correctamente la pestana Borrador.
+- MSD se separa en pedidos independientes por division: Animales de compania, Porcino y Rumiantes.
+- Cada pedido MSD tiene sus propias posiciones, unidades, total y boton para generar su plantilla correspondiente.
+- Las referencias MSD con clasificacion ambigua quedan en un bloque separado `Revisar clasificacion` y no entran en ninguna plantilla.
+- Se conservan ordenacion del borrador, validacion roja de referencias, precios, descuento preparado y totales.
 
-La aplicación no guarda datos entre sesiones.
-
-## v2.4
-- Cabeceras del Borrador clicables para ordenar por artículo, descripción, cantidad, precio, descuento, sugerido o importe.
-- Total base visible arriba del borrador y total por pedido/proveedor en cada cabecera.
-- Las líneas MSD mal referenciadas se resaltan en rojo e indican el motivo: clasificación ambigua, código ausente o código no localizado en la plantilla.
+La aplicacion no guarda datos entre sesiones.

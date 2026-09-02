@@ -284,3 +284,9 @@
 .draft-row-error .item-code,.draft-row-error .item-detail-link,.draft-row-error .desc-detail-link{color:var(--red)!important}
 .draft-template-error{display:block;margin-top:4px;color:var(--red);font-size:10px;font-weight:900;line-height:1.25}
 @media(max-width:820px){.supplier-order-total{align-items:flex-start;margin-top:8px}.supplier-group-header{display:block}}
+
+/* Borrador v2.5: MSD separado por division */
+.msd-template-grid-single{grid-template-columns:1fr}
+.supplier-group-msd .supplier-group-header h3{color:var(--blue-dark)}
+.supplier-group-review{border-color:#efb2ad}
+.supplier-group-review .supplier-group-header{background:#fff3f2}
